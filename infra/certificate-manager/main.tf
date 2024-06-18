@@ -30,7 +30,7 @@ resource "aws_route53_record" "validation" {
   zone_id = "Z00232151DQT8DDIJGBL2"
   name    = "_752a7c0ed101f5525ffd22f0f0602f7a.jenkins.server-nocnum.com."
   type    = "CNAME"
-  records = [each.value.record]
+  records = ["mysql.server-nocnum.com"]
   ttl     = 60
 }
 
