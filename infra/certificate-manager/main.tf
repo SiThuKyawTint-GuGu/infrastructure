@@ -27,10 +27,10 @@ resource "aws_route53_record" "validation" {
     }
   }
 
-  zone_id = "Z00232151DQT8DDIJGBL2"
-  name    = "_752a7c0ed101f5525ffd22f0f0602f7a.jenkins.server-nocnum.com."
-  type    = "CNAME"
-  records = ["mysql.server-nocnum.com"]
+  zone_id = var.hosted_zone_id # replace with your Hosted Zone ID
+  name    = "mysql.server-nocnum.com"
+  type    = each.value.type
+  records = [each.value.record]
   ttl     = 60
 }
 
