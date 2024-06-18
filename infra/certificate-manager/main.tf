@@ -28,9 +28,9 @@ resource "aws_route53_record" "validation" {
   }
 
   zone_id = var.hosted_zone_id # replace with your Hosted Zone ID
-  name    = each.value.name
-  type    = each.value.type
-  records = [each.value.record]
+  name    = "_752a7c0ed101f5525ffd22f0f0602f7a.jenkins.server-nocnum.com."
+  type    = "CNAME"
+  records = "jenkins.server-nocnum.com"
   ttl     = 60
 }
 
